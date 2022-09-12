@@ -31,22 +31,21 @@ def Print_Implement_In_PQueue(q):
         f.close()
     while list:
         q.put(list.pop(0))
-# def SearchDirection(storage):
-#     list=[]
-#     end=storage.pop()
-#     list.append(end)
-#     while storage:
-#         v=storage.pop()
-#         l=graph.get(v)
-#         if l:
-#             if  end in l:
-#                 end=v
-#                 list.append(end);
-#     with open('Out_BestFirstSearch.txt', 'a') as f:
-#         for i in range(len(list)-1,-1,-1):
-#             f.write(list[i]+'->')
-
-
+def SearchDirection(storage):
+    list=[]
+    end=storage.pop()
+    list.append(end)
+    while storage:
+        v=storage.pop()
+        l=graph.get(v)
+        if l:
+            if  end in l:
+                end=v
+                list.append(end);
+    with open('Out_BestFirstSearch.txt', 'a') as f:
+        f.write("Direction =>>")
+        for i in range(len(list)-1,-1,-1):
+            f.write('->'+list[i])
 def ExportData(vertex,g,visited,q):
     Print_Vertex(vertex)
     Print_Neighbors(g)
@@ -70,7 +69,8 @@ def BestFirstSearch(graph,start,end,w):
                 if neighbor not in visited:
                     visited.append(neighbor)
                     q.put((w[neighbor],neighbor))
-        ExportData(vertex,g,visited,q)          
+        ExportData(vertex,g,visited,q) 
+    SearchDirection(storage)         
 if __name__ == '__main__':
         graph = {'A': ['C','E','D'], 'C': ['F'], 'F': ['B'],'I': ['G','B'], 'D': ['I','F'],'G': ['H','B'],'E':['K','G'],'H':['B']}
         w={'A':20,'B':0,'C':15,'D':6,'E':7,'F':10,'G':5,'H':3,'I':8,'K':12}

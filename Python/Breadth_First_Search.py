@@ -35,22 +35,21 @@ def Print_Implement_In_Queue(q):
         f.close()
     while list:
         q.put(list.pop(0))
-# def SearchDirection(storage):
-#     list=[]
-#     end=storage.pop()
-#     list.append(end)
-#     while storage:
-#         v=storage.pop()
-#         l=graph.get(v)
-#         if l:
-#             if  end in l:
-#                 end=v
-#                 list.append(end);
-#     with open('Out_BreadthFirstSearch.txt', 'a') as f:
-#         for i in range(len(list)-1,-1,-1):
-#             f.write(list[i]+'->')
-
-
+def SearchDirection(storage):
+    list=[]
+    end=storage.pop()
+    list.append(end)
+    while storage:
+        v=storage.pop()
+        l=graph.get(v)
+        if l:
+            if  end in l:
+                end=v
+                list.append(end);
+    with open('Out_BreadthFirstSearch.txt', 'a') as f:
+        f.write("Direction =>>")
+        for i in range(len(list)-1,-1,-1):
+            f.write('->'+list[i])
 def ExportData(vertex,g,visited,q):
     Print_Vertex(vertex)
     Print_Neighbors(g)
@@ -85,7 +84,7 @@ def BreadthFirstSearch(graph,start,end):
                     visited.append(neighbor)   
                     q.put(neighbor)     
         ExportData(vertex,g,visited,q) 
-    # SearchDirection(storage);
+    SearchDirection(storage);
 if __name__ == '__main__':
         os.remove('Out_BreadthFirstSearch.txt')
         start,end='',''

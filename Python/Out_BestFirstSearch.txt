@@ -4,3 +4,4 @@ D6					IF					ACEDIF				E7 I8 F10 C15
 E7					KG					ACEDIFKG				G5 I8 F10 K12 C15 
 G5					HB					ACEDIFKGHB				B0 H3 I8 F10 K12 C15 
 B0										ACEDIFKGHB				H3 I8 F10 K12 C15 
+Direction =>>->A->E->G->B
