@@ -1,4 +1,4 @@
-Vertex				Neighbor			Visited				Queue
+TT				Trang Thai Ke			Danh sach Q				Danh sach L
 A					BCD					ABCD				DCB
 D					CF					ABCDF				FCB
 F					K					ABCDFK				KCB
