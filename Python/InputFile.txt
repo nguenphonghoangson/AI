@@ -1,7 +1,7 @@
-A G
-A B C D
-C E F
-B G I
-D C F
-E G K
-F K
+A,G
+A,B C D
+C,E F
+B,G I
+D,C F
+E,G K
+F,K

@@ -1,9 +1,9 @@
-Vertex				Neighbor			Visited				Stack
-A 					BCD					ABCD				DCB
-D 					CF					ABCDF				FCB
-F 					K					ABCDFK				KCB
-K 										ABCDFK				CB
-C 					EF					ABCDFKE				EB
-E 					GK					ABCDFKEG				GB
-G 										ABCDFKEG				B
-Direction =>>->A->D->C->E->G
+Vertex				Neighbor			Visited				Queue
+A					BCD					ABCD				DCB
+D					CF					ABCDF				FCB
+F					K					ABCDFK				KCB
+K										ABCDFK				CB
+C					EF					ABCDFKE				EB
+E					GK					ABCDFKEG				GB
+G										ABCDFKEG				B
+Direction =>->A->D->C->E->G

@@ -4,4 +4,4 @@ B					GI					ABCDGI				CDGI
 C					EF					ABCDGIEF				DGIEF
 D					CF					ABCDGIEF				GIEF
 G										ABCDGIEF				IEF
-Direction =>>->A->B->G
+Direction =>->A->B->G

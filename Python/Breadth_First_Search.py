@@ -1,15 +1,30 @@
 import queue
 import os
-# Vertex: Đỉnh đang xét
-# Neighbor: Đỉnh kề
-# Visited: Đỉnh đã được đánh dấu
-# queue: hàng đợi
-def Print_Vertex(vertex):
+from node import node
+def ID():
+    graph =[]
+    with open('InputFile.txt') as f:
+        l=f.readline()
+        s=l.strip().split(',')[0]
+        e=l.strip().split(',')[1]
+        while True:
+            l = f.readline()
+            if not l:
+                break
+            print(l.strip().split(','))
+            graph.append(node(l.strip().split(',')[0],l.strip().split(',')[1]))
+    return graph,s,e
+def ED(v,g,vt,q):
+    PV(v)
+    PN(g)
+    PVT(vt)
+    PIVQ(q)
+def PV(v):
     with open('Out_BreadthFirstSearch.txt', 'a') as f:
-        f.write(vertex)
+        f.write(v.vertex)
         f.write('\t\t\t\t\t')
         f.close()
-def Print_Neighbors(g):
+def PN(g):
     with open('Out_BreadthFirstSearch.txt', 'a') as f:
         if g:
             for neighbor in g:
@@ -17,80 +32,68 @@ def Print_Neighbors(g):
             f.write('\t\t\t\t\t')
         else: f.write('\t\t\t\t\t')
         f.close()
-def Print_Visited(visited):
+def PVT(vt):
     with open('Out_BreadthFirstSearch.txt', 'a') as f:
-        for v in visited:
+        for v in vt:
             f.write(v)
         f.write('\t\t\t\t')
         f.close()
-def Print_Implement_In_Queue(q):
+def PIVQ(q):
     list=[]
     while q.qsize():
         v=q.get()                                        
         list.append(v)
     with open('Out_BreadthFirstSearch.txt', 'a') as f:
         for v in list:
-            f.write(v)
+            f.write(v.vertex)
         f.write('\n')
         f.close()
     while list:
         q.put(list.pop(0))
-def SearchDirection(storage):
-    list=[]
-    end=storage.pop()
-    list.append(end)
-    while storage:
-        v=storage.pop()
-        l=graph.get(v)
+def SD(st):
+    print(st)
+    list,e=[],st.pop()
+    list.append(e)
+    while st:
+        v=st.pop()
+        l=Vertex(v).neighbor.split();
         if l:
-            if  end in l:
-                end=v
-                list.append(end);
+            if  e in l:
+                e=v
+                list.append(e);
     with open('Out_BreadthFirstSearch.txt', 'a') as f:
-        f.write("Direction =>>")
+        f.write("Direction =>")
         for i in range(len(list)-1,-1,-1):
             f.write('->'+list[i])
-def ExportData(vertex,g,visited,q):
-    Print_Vertex(vertex)
-    Print_Neighbors(g)
-    Print_Visited(visited)
-    Print_Implement_In_Queue(q)
-def ImportData(start,end,graph):
-    with open('InputFile.txt') as f:
-        line=f.readline()
-        start=line.strip().split(' ',1)[0]
-        end=line.strip().split(' ',1)[1]
-        while True:
-            line = f.readline()
-            if not line:
-                break
-            graph[line.strip().split(' ',1)[0]]=line.strip().split(' ',1)[1].split(' ')
-    return graph,start,end
-def BreadthFirstSearch(graph,start,end):
-    visited,q,storage=[],queue.Queue(),[];
-    q.put(start)
+def Vertex(x):
+    n=node(x)
+    for i in range(0,len(graph)):
+            if x is graph[i].vertex:
+                n = graph[i]
+    return n
+def BFS():
+    vt,q,st=[],queue.Queue(),[];
+    q.put(Vertex(s))
     while q:
-        vertex=q.get()
-        storage.append(vertex)
-        if vertex  not in visited:
-            visited.append(vertex)
-        g=graph.get(vertex); 
-        if vertex==end: 
-            ExportData(vertex,g,visited,q)
+        v=q.get()
+        st.append(v.vertex)
+        if v.vertex  not in vt:
+            vt.append(v.vertex)
+        g=v.neighbor.split(); 
+        if v.vertex==Vertex(e).vertex: 
+            ED(v,g,vt,q)
             break
         if g:
             for neighbor in g:
-                if neighbor not in visited:
-                    visited.append(neighbor)   
-                    q.put(neighbor)     
-        ExportData(vertex,g,visited,q) 
-    SearchDirection(storage);
+                if neighbor not in vt:
+                    vt.append(neighbor)   
+                    q.put(Vertex(neighbor))     
+        ED(v,g,vt,q) 
+    SD(st);
 if __name__ == '__main__':
         os.remove('Out_BreadthFirstSearch.txt')
-        start,end='',''
-        graph =dict()
-        graph,start,end =ImportData(start,end,graph)
+        graph,s,e =ID()
         with open('Out_BreadthFirstSearch.txt', 'a') as f:
-            f.write('Vertex\t\t\t\tNeighbor\t\t\tVisited\t\t\t\tQueue\n')
+            f.write('TT\t\t\t\tTrang Thai Ke\t\t\tDanh sach Q\t\t\t\tDanh sach L\n')
             f.close()
-        BreadthFirstSearch(graph,start,end)
+        BFS()
