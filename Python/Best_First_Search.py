@@ -1,6 +1,6 @@
 import queue
 import os
-from node import node
+from Node import Node
 def ID():
     graph =[]
     with open('InputFile1.txt') as f:
@@ -11,7 +11,7 @@ def ID():
             l = f.readline()
             if not l:
                 break
-            graph.append(node(l.strip().split(',')[0],l.strip().split(',')[1],int(l.strip().split(',')[2])))
+            graph.append(Node(l.strip().split(',')[0],l.strip().split(',')[1],int(l.strip().split(',')[2])))
     return graph,s,e
 def ED(v,g,vt,q):
     PV(v)
@@ -66,7 +66,7 @@ def SD(st):
         for i in range(len(list)-1,-1,-1):
             f.write('->'+list[i])
 def Vertex(x):
-    n=node(x)
+    n=Node(x)
     for i in range(0,len(graph)):
             if x is graph[i].vertex:
                 n = graph[i]
@@ -95,6 +95,6 @@ if __name__ == '__main__':
         os.remove('Out_BestFirstSearch.txt')
         graph,s,e =ID()
         with open('Out_BestFirstSearch.txt', 'a') as f:
-            f.write('TT\t\t\t\tTrang Thai Ke\t\t\tDanh sach Q\t\t\t\tDanh sach L\n')
+            f.write('TT\t\t\t\t\tTTK\t\t\tk(u,v)\t\th(v)\t\tg(v)\t\tf(v)\t\t\tDanh sach L1\t\t\tDanh sach L\n')
             f.close()
         BFS()

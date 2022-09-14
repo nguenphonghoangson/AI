@@ -1,0 +1,62 @@
+TT					TTK			k(u,v)		h(v)		g(v)		f(v)			Danh sach L1			Danh sach L
+A14					C			9			15			9			24
+					D			7			6			7			13
+					E			13			8			13			21
+					F			20			7			20			27
+																					D13E21C24F27			D13E21C24F27
+D13					H			8			10			15			25
+					E			4			8			11			19
+																					E19H25			E19H25E19C24F27
+E19					K			4			2			15			17
+					I			3			4			14			18
+																					K17I18			K17I18H25E19C24F27
+K17					B			6			0			21			21
+																					B21			B21I18H25E19C24F27
+B21																								I18H25E19C24F27
+Direction =>->A->D->E->K->B  Do dai 21
+I18					K			9			2			23			25
+					B			5			0			19			19
+																					B19K25			B19K25H25E19C24F27
+B19																								K25H25E19C24F27
+Direction =>->A->D->E->I->B  Do dai 19
+K25					B			6			0			29			29
+																					B29			B29H25E19C24F27
+B29																								H25E19C24F27
+H25					K			5			2			20			22
+																					K22			K22E19C24F27
+K22					B			6			0			26			26
+																					B26			B26E19C24F27
+B26																								E19C24F27
+E19					K			4			2			15			17
+					I			3			4			14			18
+																					K17I18			K17I18C24F27
+K17					B			6			0			21			21
+																					B21			B21I18C24F27
+B21																								I18C24F27
+Direction =>->A->D->E->K->B  Do dai 21
+I18					K			9			2			23			25
+					B			5			0			19			19
+																					B19K25			B19K25C24F27
+B19																								K25C24F27
+Direction =>->A->D->E->I->B  Do dai 19
+K25					B			6			0			29			29
+																					B29			B29C24F27
+B29																								C24F27
+C24					H			6			10			15			25
+																					H25			H25F27
+H25					K			5			2			20			22
+																					K22			K22F27
+K22					B			6			0			26			26
+																					B26			B26F27
+B26																								F27
+F27					G			4			12			24			36
+					I			6			4			26			30
+																					I30G36			I30G36
+I30					K			9			2			35			37
+					B			5			0			31			31
+																					B31K37			B31K37G36
+B31																								K37G36
+K37					B			6			0			41			41
+																					B41			B41G36
+B41																								G36
+G36																								

@@ -1,7 +1,7 @@
 import queue
 import os
 from traceback import print_tb
-from node import node
+from Node import Node
 def ID():
     graph =[]
     with open('InputFile1.txt') as f:
@@ -12,7 +12,7 @@ def ID():
             l = f.readline()
             if not l:
                 break
-            graph.append(node(l.strip().split(',')[0],l.strip().split(',')[1],int(l.strip().split(',')[2])))
+            graph.append(Node(l.strip().split(',')[0],l.strip().split(',')[1],int(l.strip().split(',')[2])))
     return graph,s,e
 def ED(v,g,vt,stack,l1):
     PV(v)
@@ -74,7 +74,7 @@ def SD(st):
         for i in range(len(list)-1,-1,-1):
             f.write('->'+list[i])
 def Vertex(x):
-    n=node(x)
+    n=Node(x)
     for i in range(0,len(graph)):
             if x is graph[i].vertex:
                 n = graph[i]

@@ -1,6 +1,6 @@
 import queue
 import os
-from node import node
+from Node import Node
 def ID():
     graph =[]
     with open('InputFile.txt') as f:
@@ -12,7 +12,7 @@ def ID():
             if not l:
                 break
             print(l.strip().split(','))
-            graph.append(node(l.strip().split(',')[0],l.strip().split(',')[1]))
+            graph.append(Node(l.strip().split(',')[0],l.strip().split(',')[1]))
     return graph,s,e
 def ED(v,g,vt,stack):
     PV(v)
@@ -66,7 +66,7 @@ def SD(st):
         for i in range(len(list)-1,-1,-1):
             f.write('->'+list[i])
 def Vertex(x):
-    n=node(x)
+    n=Node(x)
     for i in range(0,len(graph)):
             if x is graph[i].vertex:
                 n = graph[i]
