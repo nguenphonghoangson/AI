@@ -12,8 +12,20 @@ def ID():
             l = f.readline()
             if not l:
                 break
-            graph.append(Node(l.strip().split(',')[0],l.strip().split(',')[1],int(l.strip().split(',')[2])))
+            x=CreatedNote(l.strip().split(',')[0],graph)
+            x.setneighbors(l.strip().split(',')[1])
+            x.setweight(int(l.strip().split(',')[2]))
+            neighbors=x.neighbor.split()
+            for i in range(0,len(neighbors)):
+                CreatedNote(neighbors[i],graph)
     return graph,s,e
+def CreatedNote(vertex,graph):
+    for i in graph:
+        if vertex==i.vertex:
+            return i
+    v=Node(vertex)
+    graph.append(v)  
+    return v 
 def ED(v,g,vt,stack,l1):
     PV(v)
     PN(g)

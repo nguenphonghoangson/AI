@@ -1,7 +1,8 @@
 TT				Trang Thai Ke			Danh sach Q				Danh sach L
 A					BCD					ABCD				BCD
-B					GI					ABCDGI				CDGI
-C					EF					ABCDGIEF				DGIEF
-D					CF					ABCDGIEF				GIEF
-G										ABCDGIEF				IEF
-Direction =>->A->B->G
+B					IG					ABCDIG				CDIG
+C					EF					ABCDIGEF				DIGEF
+D					CF					ABCDIGEF				IGEF
+I					G					ABCDIGEF				GEF
+G										ABCDIGEF				EF
+Direction =>->A->B->I->G

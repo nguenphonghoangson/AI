@@ -1,4 +1,4 @@
-TT				Trang Thai Ke			Danh sach Q				Danh sach L
+TT					TTK			k(u,v)		h(v)		g(v)		f(v)			Danh sach L1			Danh sach L
 A20					CED					ACED				D6E7C15
 D6					IF					ACEDIF				E7I8F10C15
 E7					KG					ACEDIFKG				G5I8F10K12C15

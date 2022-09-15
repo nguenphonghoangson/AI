@@ -22,13 +22,4 @@ I4
 																					B19B21E21C24K25H25F27
 B0					
 																					E21B21C24H25K25F27
-Direction =>->A->D->E->I->B  Do dai 19Direction =>->A->D->E->K->B  Do dai 21
-Direction =>->I->B  Do dai 19
-Direction =>->K->B  Do dai 29
-Direction =>->H->K->B  Do dai 26
-Direction =>->E->K->B  Do dai 21
-Direction =>->I->B  Do dai 19
-Direction =>->K->B  Do dai 29
-Direction =>->C->H->K->B  Do dai 26
-Direction =>->F->I->B  Do dai 31
-Direction =>->K->B  Do dai 41
+Direction =>->A->D->E->I->B  Do dai 19

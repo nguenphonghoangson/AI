@@ -1,7 +1,8 @@
 A,G
 A,B C D
 C,E F
-B,G I
+B,I G
 D,C F
 E,G K
 F,K
+I,G

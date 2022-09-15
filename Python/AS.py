@@ -13,15 +13,22 @@ def ID():
                 l = f.readline()
                 if not l:
                     break
-                x=Node(l.strip().split(',')[0])
+                x=CreatedNote(l.strip().split(',')[0],graph)
                 x.setneighbors(l.strip().split(',')[1])
                 x.setweight(int(l.strip().split(',')[2]))
                 dist=l.strip().split(',')[3].split()
                 neighbors=x.neighbor.split()
                 for i in range(0,len(neighbors)):
-                        distance.append(Distance(x,Node(neighbors[i]),int(dist[i])))
+                        distance.append(Distance(x,CreatedNote(neighbors[i],graph),int(dist[i])))
                 graph.append(x)
     return graph,s,e,distance
+def CreatedNote(vertex,graph):
+    for i in graph:
+        if vertex==i.vertex:
+            return i
+    v=Node(vertex)
+    graph.append(v)  
+    return v 
 def ED(v,g,q):
     PV(v)
     PN(g,v)
@@ -79,8 +86,7 @@ def SD(st,x):
         for i in range(len(list)-1,-1,-1):
             f.write('->'+list[i])
         print(e)
-        f.write('  Do dai '+str(x.g))
-    
+        f.write('  Do dai '+str(x.g))  
 def Vertex(x):
     n=Node(x)
     for i in range(0,len(graph)):
@@ -117,11 +123,11 @@ def AS():
 if __name__ == '__main__':
         os.remove('Out_AS.txt')
         graph,s,e,distance=ID()
-        # for i in graph:
-        #     print(i.vertex+i.neighbor+str(i.weight))
-        # for i in distance:
-        #     print(i.x.vertex+i.y.vertex+str(i.dist))
-        # print(str(getDistance(graph[0],graph[1])))
+        for i in graph:
+            print(i.vertex+i.neighbor+str(i.weight))
+        for i in distance:
+            print(i.x.vertex+i.y.vertex+str(i.dist))
+        print(str(getDistance(graph[0],graph[1])))
         with open('Out_AS.txt', 'a') as f:
             f.write('TT\t\t\t\t\tTTK\t\t\tk(u,v)\t\th(v)\t\tg(v)\t\tf(v)\t\t\t\tDanh sach L\n')
             f.close()
