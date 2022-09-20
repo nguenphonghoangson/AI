@@ -2,7 +2,7 @@ import queue
 import os
 from Node import Node
 def ID():
-    graph =[]
+    graph =[]# list lưu node
     with open('InputFile.txt') as f:
         l=f.readline()
         s=l.strip().split(',')[0]
@@ -18,7 +18,7 @@ def ID():
                 CreatedNote(neighbors[i],graph)
     return graph,s,e
 def CreatedNote(vertex,graph):
-    for i in graph:
+    for i in graph: 
         if vertex==i.vertex:
             return i
     v=Node(vertex)

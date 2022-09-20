@@ -20,7 +20,6 @@ def ID():
                 neighbors=x.neighbor.split()
                 for i in range(0,len(neighbors)):
                         distance.append(Distance(x,CreatedNote(neighbors[i],graph),int(dist[i])))
-                graph.append(x)
     return graph,s,e,distance
 def CreatedNote(vertex,graph):
     for i in graph:
@@ -100,7 +99,7 @@ def getDistance(n1,n2):
     return 0;
 def AS():
     q,st=queue.PriorityQueue(),[];
-    q.put((Vertex(s).weight,Vertex(s)))
+    q.put((0,Vertex(s)))
     while q:
         v=q.get()
         print(v[1].vertex+str(v[0]))
